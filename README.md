@@ -43,7 +43,7 @@ m2m.connect()
     })
   })
 
-  server.publish('gpio-15', (tcp) => {
+  server.publish('gpio-13', (tcp) => {
     sw2.watch((state) => {
      if(state){
        led2.on();
