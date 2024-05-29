@@ -1,5 +1,5 @@
 ## Edge Raspberry Pi GPIO Access
-[](assets/m2m-pub-sub.png)
+![](assets/edge-rpi-gpio-access.svg)
 [](https://raw.githubusercontent.com/EdoLabs/src2/master/quicktour.svg?sanitize=true)
 
 #### Install *m2m* and *array-gpio* on your server endpoints.
