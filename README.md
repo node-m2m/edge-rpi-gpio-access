@@ -155,7 +155,7 @@ $ node app.js
 $ npm install m2m
 ```
 
-The edge client will serve as the central distributed control application. It will monitor the gpio input pins (11 and 13) from *rpi server 1*. If the state of the gpio pins is true by pressing the switch button, it will send a pulse signal to pin 33 of *rpi server's 2 and 3* in real-time.  
+The edge client will serve as the central distributed control application. It will monitor the gpio input pin's 11 and 13 from *rpi server 1*. Pressing any of the the switch buttons, it will send a corresponding pulse signal to pin 33 of *rpi server's 2 and 3* in real-time.  
 #### 1. Save the code below as *app.js* in your client project directory.
 
 ```js
@@ -167,15 +167,15 @@ m2m.connect()
 .then(console.log)
 .then(() => {
 
-  // edge client 1 to access rpi server 1
+  // Create edge client 1 to access rpi server 1
   let ec1 = new edge.client({port:8125, ip:'192.168.0.120', secure:false})
-  // edge client 2 to access rpi server 2
+  // Create edge client 2 to access rpi server 2
   let ec2 = new edge.client({port:8125, ip:'192.168.0.121', secure:false})
-  // edge client 3 to access rpi server 3
+  // Create edge client 3 to access rpi server 3
   let ec3 = new edge.client({port:8125, ip:'192.168.0.122', secure:false}) 
 
   // monitor rpi 1 gpio pin 11 
-  ec1.sub('gpio-11', async (data) => {
+  ec1.sub('gpio-11', (data) => {
     console.log('gpio-11', data)
     if(data.state){
       ec2.write('gpio-33', 'pulse') // send a pulse to rpi 2 gpio pin 33
@@ -183,7 +183,7 @@ m2m.connect()
   })
 
   // monitor rpi 1 gpio pin 13
-  ec1.sub('gpio-13', async (data) => {
+  ec1.sub('gpio-13', (data) => {
     console.log('gpio-13', data)
     if(data.state){
       ec3.write('gpio-33', 'pulse') // send a pulse to rpi 3 gpio pin 33
