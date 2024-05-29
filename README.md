@@ -9,7 +9,7 @@ $ npm install m2m array-gpio
 ```
 
 ### Rpi Server 1 
-#### 1. Connect a momentary switch button on pin's 11 and 13.
+#### 1. Connect a momentary switch button on gpio pin's 11 and 13.
 #### 2. Save the code below as *app.js* in your project directory. 
 
 ```js
@@ -69,7 +69,7 @@ $ node app.js
 
 ### Rpi Server 2
 
-#### 1. Connect an led on pin 33.
+#### 1. Connect an led on gpio pin 33.
 
 #### 2. Save the code below as *app.js* in your project directory.
 
@@ -109,7 +109,7 @@ $ node app.js
 
 ### Rpi Server 3
 
-#### 1. Connect an led on pin 33.
+#### 1. Connect an led on gpio pin 33.
 #### 2. Save the code below as *app.js* in your project directory. <br> The code is similar with rpi server 2 except for the host ip. 
 
 ```js
@@ -155,7 +155,7 @@ $ node app.js
 $ npm install m2m
 ```
 
-The edge client will serve as the central distributed control application. It will monitor the gpio input pins (11 and 13) from rpi server 1 and appropriately send a pulse signal to pin 33 of rpi server's 2 and 3 in real-time.  
+The edge client will serve as the central distributed control application. It will monitor the gpio input pins (11 and 13) from *rpi server 1*. If the state of the gpio pins is true by pressing the switch button, it will send a pulse signal to pin 33 of *rpi server's 2 and 3* in real-time.  
 #### 1. Save the code below as *app.js* in your client project directory.
 
 ```js
