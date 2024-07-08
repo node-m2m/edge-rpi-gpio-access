@@ -51,7 +51,7 @@ $ node app.js
 ### Rpi Server 2
 
 #### 1. Connect an led on gpio pin 33.
-#### 2. Save the code below as *app.js* in your project directory. <br> The code is similar with rpi server 2 except for the host ip. 
+#### 2. Save the code below as *app.js* in your project directory. <br> The code is similar with rpi server 1 except for the host ip. 
 
 ```js
 const m2m = require('m2m')
@@ -90,13 +90,13 @@ $ node app.js
 
 ### Edge Client
 
-#### Install *m2m* on your client endpoint.
+#### Install *m2m* and *array-gpio* on your client endpoint.
 
 ```js
-$ npm install m2m
+$ npm install m2m array-gpio
 ```
 
-The edge client will monitor the gpio input pin 11 and 13 for 'ON' or true state upon pressing any of the the switch buttons. If true, it will send a corresponding command to *rpi server 1 or 2* to pulse the gpio pin 33 of corresponding server in real-time.
+The edge client will monitor the gpio input pin 11 and 13 for 'ON' or true state upon pressing any of the switch buttons. If true, it will send a corresponding command to *rpi server 1 or 2* to pulse the gpio pin 33 of the corresponding server in real-time.
 #### 1. Connect a momentary switch button on gpio pin's 11 and 13.
 #### 2. Save the code below as *app.js* in your client project directory.
 
