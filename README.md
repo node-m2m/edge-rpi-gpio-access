@@ -113,9 +113,10 @@ m2m.connect()
 .then(console.log)
 .then(() => {
 
-  // Create edge client 1 to access rpi server 1
+  // Create an edge client 1 to access the rpi server 1
   let ec1 = new edge.client({port:8125, ip:'192.168.0.120', secure:false})
-  // Create edge client 2 to access rpi server 2
+
+  // Create an edge client 2 to access the rpi server 2
   let ec2 = new edge.client({port:8125, ip:'192.168.0.121', secure:false})
 
   // monitor gpio pin 11 for 'ON' or true state  
