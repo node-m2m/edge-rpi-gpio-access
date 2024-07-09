@@ -96,7 +96,7 @@ $ node app.js
 $ npm install m2m array-gpio
 ```
 
-The edge client will monitor the gpio input pin 11 and 13 for 'ON' or true state upon pressing any of the switch buttons. If true, it will send a corresponding command to *rpi server 1 or 2* to pulse the gpio pin 33 of the corresponding server in real-time.
+The edge client will monitor the gpio input pin 11 and 13 for 'ON' or true state upon pressing any of the switch buttons. If true, it will send a corresponding command to *rpi server 1 or 2* to create a pulse signal on gpio pin 33 in real-time.
 #### 1. Connect a momentary switch button on gpio pin's 11 and 13.
 #### 2. Save the code below as *app.js* in your client project directory.
 
